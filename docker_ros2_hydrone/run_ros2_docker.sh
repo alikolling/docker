@@ -4,7 +4,7 @@ XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 sudo touch $XAUTH
 sudo xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
-
+xhost +
 # Comment out if you don't have a nvidia GPU
 # More info: http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration
 #GPU_OPTIONS="--gpus all --runtime=nvidia"
